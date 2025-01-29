@@ -493,6 +493,7 @@ public class GoogleDriveUploader extends Uploader {
      * @throws Exception
      */
     private void pruneBackups(File folder) throws Exception {
+        retrieveNewAccessToken();
         int fileLimit = ConfigParser.getConfig().backupStorage.keepCount;
         if (fileLimit == -1) {
             return;
